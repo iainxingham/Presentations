@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic statistics and epidemiology</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Basic statistics and epidemiology">
+  <meta name="author" content="Dr Iain Crossingham">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Basic statistics and epidemiology</h1>
+    <h2></h2>
+    <p>Dr Iain Crossingham<br/>Consultant Physician &amp; Intensivist<br/>Royal Blackburn Hospital</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Agenda</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>What is clinical epidemiology?</li>
+<li>Types of study</li>
+<li>Bias, confounding and causality</li>
+<li>Contingency tables</li>
+<li>Hypothesis testing</li>
+<li>Power</li>
+<li>Bland Altman plots</li>
+<li>Bayes theorem</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Epidemiology</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Not this bloke</p>
+
+<p><img class="center" src="http://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Jon_Snow-Kit_Harington.jpg/240px-Jon_Snow-Kit_Harington.jpg"></p>
+
+<p>Source: <a href="http://en.wikipedia.org/wiki/Jon_Snow_%28character%29">Wikipedia</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Epidemiology</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='float:left;width:48%;' class='centered'>
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/John_Snow.jpg/240px-John_Snow.jpg">
+</div>
+
+<div style='float:right;width:48%;'>
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Snow-cholera-map-1.jpg/300px-Snow-cholera-map-1.jpg">
+</div>
+
+<p>Source: <a href="%22http://en.wikipedia.org/wiki/John_Snow_(physician)%22">Wikipedia</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Clinical Epidemiology</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%'>
+     <p><img src="http://fhs.mcmaster.ca/sackettsymposium/images/sackett_david.jpg"></p>
+
+<p>Source: <a href="http://fhs.mcmaster.ca/sackettsymposium/sackett_dave.html">McMaster University</a></p>
+
+</div>    
+<div style='float:right;width:48%'>
+     <ul>
+<li>Sackett refused to define his field</li>
+<li>The &quot;basic science&quot; of evaluating the effectiveness of clinical practice</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Association between exposure and outcome</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>True association</h3>
+
+<h3>Bias</h3>
+
+<h3>Confounding</h3>
+
+<h3>Random error</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Bias</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Selection bias</h3>
+
+<ul>
+<li>Study participants are not reflective of the reference population</li>
+<li>Comparison groups are not comparable</li>
+</ul>
+
+<h3>Information bias</h3>
+
+<ul>
+<li>Systematic differences in the accuracy of information collected between comparison groups</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Does smoking cause lung cancer?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./assets/img/CCSmoking.png"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Correcting for bias</h2>
+  </hgroup>
+  <article data-timings="">
+    <blockquote>
+<h3>Don&#39;t have it in the first place!</h3>
+
+<ul>
+<li>There is no statistical method that can retrospectively save a biased study.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Confounding</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>A confounder is associated with both the exposure and the outcome but is not on the causal pathway from exposure to outcome</h3>
+
+<p><img src="./assets/img/Confounder.png"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Confounding - an example</h2>
+  </hgroup>
+  <article data-timings="">
+    <table>
+<tr><th></th><th></th><th colspan="2">Outcome</th></tr>
+<tr><th></th><th></th><td>Pancreatic cancer cases</td><td>Controls</td></tr>
+<tr><th rowspan="2">Exposure</th><td>Coffee drinkers</td><td>450</td><td>200</td></tr>
+<tr><td>Not coffee drinkers</td><td>300</td><td>250</td></tr>
+</table>
+
+<h3>Odds ratio 1.9</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Stratify by smoking</h2>
+  </hgroup>
+  <article data-timings="">
+    <table>
+<tr><th></th><th></th><th></th><th colspan="2">Outcome</th></tr>
+<tr><th></th><th></th><th></th><td>Pancreatic cancer cases</td><td>Controls</td></tr>
+<tr><th rowspan="4">Exposure</th><td rowspan="2">Smokers</td><td>Coffee drinkers</td><td>400</td><td>100</td></tr>
+<tr><td>Not coffee drinkers</td><td>200</td><td>50</td></tr>
+<tr><td rowspan="2">Non-smokers</td><td>Coffee drinkers</td><td>50</td><td>100</td></tr>
+<tr><td>Not coffee drinkers</td><td>100</td><td>200</td></tr>
+</table>
+
+<h3>Odds ratio in smokers 1.0</h3>
+
+<h3>Odds ratio in non-smokers 1.0</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Types of study</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./assets/img/Studies.png"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Ecological studies</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Observations made using aggregated data</h3>
+
+<h3>Mainly for population level and public health applications</h3>
+
+<h3>May be appropriate for some ICU studies</h3>
+
+<h3>Beware ecological fallacy</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Example of an ecological study</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>35 German ICUs</h3>
+
+<h3>Collected data on monthly antibiotic use and numbers of nosocomial infections</h3>
+
+<h3>High use of glycopeptides and quinolones associated with CVC infections</h3>
+
+<h3>Doesn&#39;t directly look at whether the patients who received glycopeptides got CVC infections</h3>
+
+<p>Meyer et al. <i>Intensive Care Med</i>. 2004; <b>30</b>: 1089</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Cohort studies</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./assets/img/cohort1.png"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Wait...</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Cohort studies</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./assets/img/cohort2.png"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Cohort studies</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%'>
+     <h3>Advantages</h3>
+
+<ul>
+<li>Exposure measured before outcome</li>
+<li>Examine multiple exposures and outcomes</li>
+</ul>
+
+</div>    
+<div style='float:right;width:48%'>
+     <h3>Disadvantages</h3>
+
+<ul>
+<li>Slow to carry out</li>
+<li>Inefficient for rare diseases</li>
+<li>Bias</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Case control studies</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./assets/img/casecon.png"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Analysis of case control studies</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Don&#39;t know size of population cases and controls drawn from</h3>
+
+<h3>Can&#39;t calculate measures like risks and rates</h3>
+
+<h3>Therefore use odds ratios</h3>
+
+<h3>Can be shown that these approximate risk ratios or rate ratios under certain circumstances</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Case control studies</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%'>
+     <h3>Advantages</h3>
+
+<ul>
+<li>Rapid to carry out</li>
+<li>Efficient for rare diseases</li>
+</ul>
+
+</div>    
+<div style='float:right;width:48%'>
+     <h3>Disadvantages</h3>
+
+<ul>
+<li>Prone to selection bias</li>
+<li>Prone to information bias</li>
+<li>Reverse causality</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <article data-timings="">
+    <p><q>I would only trust six people in the world to carry out a proper case control study</q></p>
+
+<p>David Sackett</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>Randomised controlled trials</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./assets/img/rct.png"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>Causality</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%'>
+     <p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Austin_Bradford_Hill.jpg/220px-Austin_Bradford_Hill.jpg"></p>
+
+<p>Source <a href="http://en.wikipedia.org/wiki/Austin_Bradford_Hill">Wikipedia</a></p>
+
+</div>    
+<div style='float:right;width:48%'>
+     <ul>
+<li>Based on a lecture to the Royal Society of Medicine</li>
+<li>Framework for assessing causality</li>
+</ul>
+
+<p>Bradford Hill A. The environment and disease: association or causation? <i>J R Soc Med</i>. 1965; <b>58</b>: 295-300</p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  <hgroup>
+    <h2>Bradford Hill criteria</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Strength of association</li>
+<li>Consistency across studies</li>
+<li>Specificity</li>
+<li>Temporality</li>
+<li>Biological gradient (eg. dose response)</li>
+<li>Plausibility</li>
+<li>Coherence (eg. between laboratory and epidemiology findings)</li>
+<li>Experiment</li>
+<li>Analogy</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-26" style="background:;">
+  <hgroup>
+    <h2>Contingency tables</h2>
+  </hgroup>
+  <article data-timings="">
+    <table>
+<tr><th></th><th></th><th colspan="2">Outcome / Gold standard</th></tr>
+<tr><th></th><th></th><td>Positive</td><td>Negative</td></tr>
+<tr><th rowspan="2">Exposure / new test</th><td>Positive</td><td>True positives</td><td>False positives</td></tr>
+<tr><td>Negative</td><td>False negatives</td><td>True negatives</td></tr>
+</table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h2>An example</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Study of consecutive patients requiring endotracheal intubation by ED doctors in a UK teaching hospital. A subset had pre intubation MP grade recorded.</p>
+
+<table>
+<tr><th></th><th></th><th colspan="2">Difficult intubation</th></tr>
+<tr><th></th><th></th><td>Positive</td><td>Negative</td></tr>
+<tr><th rowspan="2">MP grade</th><td>3-4</td><td>3</td><td>22</td></tr>
+<tr><td>1-2</td><td>16</td><td>45</td></tr>
+</table>
+
+<ul>
+<li>What proportion of difficult intubations does MP grade correctly identify?</li>
+<li>What proportion of easy intubations does MP grade correctly identify?</li>
+<li>If the ED doctor asks for help, how likely are they to actually need it?</li>
+<li>If the ED doctor says it will be easy, how likely is (s)he to be OK?</li>
+<li>Overall how good is MP grade?</li>
+</ul>
+
+<p><i>Emerg Med J</i> 2005; <b>22</b>: 99-102</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-28" style="background:;">
+  <hgroup>
+    <h2>Sensitivity</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>What proportion of difficult intubations does MP grade correctly identify?</p>
+
+<table>
+<tr><th></th><th></th><th colspan="2">Difficult intubation</th></tr>
+<tr><th></th><th></th><td>Positive</td><td>Negative</td></tr>
+<tr><th rowspan="2">MP grade</th><td>3-4</td><td>3</td><td>22</td></tr>
+<tr><td>1-2</td><td>16</td><td>45</td></tr>
+</table>
+
+<p>If we only test those with the disease, how many would we identify?</p>
+
+<p>\[ Sensitivity = \frac {TP}{TP+FN} \]
+\[ = \frac {3}{3+16} \]
+\[ = 16\% \]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-29" style="background:;">
+  <hgroup>
+    <h2>Specificity</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>What proportion of easy intubations does MP grade correctly identify?</p>
+
+<table>
+<tr><th></th><th></th><th colspan="2">Difficult intubation</th></tr>
+<tr><th></th><th></th><td>Positive</td><td>Negative</td></tr>
+<tr><th rowspan="2">MP grade</th><td>3-4</td><td>3</td><td>22</td></tr>
+<tr><td>1-2</td><td>16</td><td>45</td></tr>
+</table>
+
+<p>If we only test those without the disease, how many would we give the all clear to?</p>
+
+<p>\[ Specificity = \frac {TN}{FP+TN} \]
+\[ = \frac {45}{22+45} \]
+\[ = 67\% \]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-30" style="background:;">
+  <hgroup>
+    <h2>Positive predictive value</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>If the ED doctor asks for help, how likely are they to actually need it?</p>
+
+<table>
+<tr><th></th><th></th><th colspan="2">Difficult intubation</th></tr>
+<tr><th></th><th></th><td>Positive</td><td>Negative</td></tr>
+<tr><th rowspan="2">MP grade</th><td>3-4</td><td>3</td><td>22</td></tr>
+<tr><td>1-2</td><td>16</td><td>45</td></tr>
+</table>
+
+<p>If the test is positive, how many actually have the disease?</p>
+
+<p>\[ Positive predictive value = \frac {TP}{TP+FP} \]
+\[ = \frac {3}{3+22} \]
+\[ = 12\% \]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-31" style="background:;">
+  <hgroup>
+    <h2>Negative predictive value</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>If the ED doctor says it will be easy, how likely is (s)he to be OK?</p>
+
+<table>
+<tr><th></th><th></th><th colspan="2">Difficult intubation</th></tr>
+<tr><th></th><th></th><td>Positive</td><td>Negative</td></tr>
+<tr><th rowspan="2">MP grade</th><td>3-4</td><td>3</td><td>22</td></tr>
+<tr><td>1-2</td><td>16</td><td>45</td></tr>
+</table>
+
+<p>If the test is negative, what is the probability of them being OK?</p>
+
+<p>\[ Negative predictive value = \frac {TN}{FN+TN} \]
+\[ = \frac {45}{16+45} \]
+\[ = 74\% \]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-32" style="background:;">
+  <hgroup>
+    <h2>Accuracy</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Overall how good is MP grade?</p>
+
+<table>
+<tr><th></th><th></th><th colspan="2">Difficult intubation</th></tr>
+<tr><th></th><th></th><td>Positive</td><td>Negative</td></tr>
+<tr><th rowspan="2">MP grade</th><td>3-4</td><td>3</td><td>22</td></tr>
+<tr><td>1-2</td><td>16</td><td>45</td></tr>
+</table>
+
+<p>How often does the test get it right?</p>
+
+<p>\[ Accuracy = \frac {TP+TN}{TP+FP+FN+TN} \]
+\[ = \frac {3+45}{3+22+16+45} \]
+\[ = 56\% \]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-33" style="background:;">
+  <hgroup>
+    <h2>Which is the most important in this case?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Sensitivity</li>
+<li>Specificity</li>
+<li>Positive predictive value</li>
+<li>Negative predictive value</li>
+<li>Accuracy</li>
+</ul>
+
+<h3>Why?</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-34" style="background:;">
+  <hgroup>
+    <h2>Effect of population prevalence</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Assume a test with sensitivity and specificity of 99%
+Population A has 100 000 people and a disease prevalence 50%</p>
+
+<table>
+<tr><th></th><th></th><th colspan="2">Outcome / Gold standard</th></tr>
+<tr><th></th><th></th><td>Positive</td><td>Negative</td></tr>
+<tr><th rowspan="2">Exposure / new test</th><td>Positive</td><td>49500</td><td>500</td></tr>
+<tr><td>Negative</td><td>500</td><td>49500</td></tr>
+</table>
+
+<p>PPV = 99%</p>
+
+<p>NPV = 99%</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-35" style="background:;">
+  <hgroup>
+    <h2>Effect of population prevalence</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Assume a test with sensitivity and specificity of 99%
+Population B has 100 000 people and a disease prevalence 0.1%</p>
+
+<table>
+<tr><th></th><th></th><th colspan="2">Outcome / Gold standard</th></tr>
+<tr><th></th><th></th><td>Positive</td><td>Negative</td></tr>
+<tr><th rowspan="2">Exposure / new test</th><td>Positive</td><td>99</td><td>999</td></tr>
+<tr><td>Negative</td><td>1</td><td>98901</td></tr>
+</table>
+
+<p>PPV = 9%</p>
+
+<p>NPV = 99.999%</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-36" style="background:;">
+  <article data-timings="">
+    <p><q>[T]he glitter of the t table diverts attention from the inadequacies of the fare.</q></p>
+
+<p>Sir Austin Bradford Hill</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-37" style="background:;">
+  <hgroup>
+    <h2>Hypothesis testing</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Easier to &quot;prove&quot; something false than true</h3>
+
+<h3>Therefore set up a null hypothesis and try to show it is inconsistent with the data</h3>
+
+<h3>If it is inconsistent then reject in favour of an alternative hypothesis</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-38" style="background:;">
+  <hgroup>
+    <h2>Errors in hypothesis testing</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Type 1 error, alpha, false positive:-</h3>
+
+<p>reject the null hypothesis when it is true</p>
+
+<h3>Type 2 error, beta, false negative:-</h3>
+
+<p>non significant result when null hypothesis is false</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-39" style="background:;">
+  <hgroup>
+    <h2>What is a p value?</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+</div>    
+<div style='float:right;width:48%'>
+     <ul>
+<li><p>The p value is the chance of seeing a result of that magnitude or greater if the null hypothesis were correct.</p></li>
+<li><p>If the true value is 0, an experiment to estimate this value will give a result in one of the red areas 5% of the time.</p></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-40" style="background:;">
+  <hgroup>
+    <h2>Confidence intervals</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+</div>    
+<div style='float:right;width:48%'>
+     <ul>
+<li><p>A confidence interval is a range that we can be reasonably (typically 95%) confident the true value lies within.</p></li>
+<li><p>In the example here we are 95% confident our estimate lies in the green area of the graph</p></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-41" style="background:;">
+  <hgroup>
+    <h2>Power calculations</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Take primary outcome and estimate a &quot;reasonable&quot; result</li>
+<li>Assume alpha = 0.05</li>
+<li>Set beta so that power = 1-beta. Usual values for power are 0.8, 0.85 or 0.9</li>
+<li>Work back from the reasonable result to find the smallest n required to give a 1-beta chance of getting a statistically significant result</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-42" style="background:;">
+  <hgroup>
+    <h2>Why is subgroup analysis a bad thing?</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Approximately 1 in 20 statistical tests that should be negative will give a spurious positive result by the play of chance</h3>
+
+<h3>If groups as specified post hoc then likely their selection is likely to be influenced by knowledge of the data</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-43" style="background:;">
+  <hgroup>
+    <h2>Subgroup analysis</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./assets/img/subgroup.png"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-44" style="background:;">
+  <hgroup>
+    <h2>Bland Altman plots</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"> </p>
+
+</div>    
+<div style='float:right;width:48%'>
+     <ul>
+<li>Slightly obscure and first described by Tukey not Bland and Altman</li>
+<li>But ... specifically mentioned in the FRCA curriculum</li>
+<li>Used for comparing two tests of the same measure, for example two different cardiac output monitors </li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-45" style="background:;">
+  <hgroup>
+    <h2>Bayes theorem</h2>
+  </hgroup>
+  <article data-timings="">
+    <h4>\[ P(A | B) = \frac {P(B | A) P(A)}{P(B)} \]</h4>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-46" style="background:;">
+  <hgroup>
+    <h2>Why Bayesian analysis?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>More frequently used in last few years as availability of computing power and software (eg. BUGS, JAGS)</li>
+<li>Allows efficient use of pre existing knowledge base</li>
+<li>Avoids &quot;intention&quot; problem with frequentist approach to statistics</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-47" style="background:;">
+  <hgroup>
+    <h2>Is this coin fair?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>A coin is tossed 26 times</p>
+
+<p><q>TTTTTHTTTHHTTHTHTTTHHTTTTH</q></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-48" style="background:;">
+  <hgroup>
+    <h2>Depends what you meant to do!</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%'>
+     <p>Plan to toss the coin 26 times</p>
+
+<p><img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"> </p>
+
+</div>    
+<div style='float:right;width:48%'>
+     <p>Plan to toss the coin until 8 heads came up</p>
+
+<p><img src="assets/fig/unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-49" style="background:;">
+  <hgroup>
+    <h2>Questions?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Slides available at <a href="https://iainxingham.github.io/Presentations">https://iainxingham.github.io/Presentations</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Agenda'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Epidemiology'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Epidemiology'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Clinical Epidemiology'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Association between exposure and outcome'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Bias'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Does smoking cause lung cancer?'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Correcting for bias'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Confounding'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Confounding - an example'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Stratify by smoking'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Types of study'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Ecological studies'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Example of an ecological study'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Cohort studies'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Wait...'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Cohort studies'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Cohort studies'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Case control studies'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Analysis of case control studies'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Case control studies'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title=''>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Randomised controlled trials'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Causality'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Bradford Hill criteria'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Contingency tables'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='An example'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Sensitivity'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Specificity'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Positive predictive value'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Negative predictive value'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='Accuracy'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='Which is the most important in this case?'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='Effect of population prevalence'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='Effect of population prevalence'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title=''>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='Hypothesis testing'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='Errors in hypothesis testing'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='What is a p value?'>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='Confidence intervals'>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='Power calculations'>
+         41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='Why is subgroup analysis a bad thing?'>
+         42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='Subgroup analysis'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='Bland Altman plots'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='Bayes theorem'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='Why Bayesian analysis?'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='Is this coin fair?'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='Depends what you meant to do!'>
+         48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='Questions?'>
+         49
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
